@@ -27,7 +27,7 @@ const About: React.FC = () => {
       degree: "B.Tech in Computer Science and Engineering",
       institution: "Indian Institute of Information Technology, Sri City",
       period: "2023 – Present",
-      cgpa: "7.29",
+      cgpa: "7.51",
       marks: null,
       icon: <GraduationCap className="w-6 h-6" />
     },
@@ -73,13 +73,15 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  I am a highly motivated and driven third-year Computer Science and Engineering student at the prestigious Indian Institute of Information Technology, Sri City. With a strong academic foundation reflected in my current CGPA of 9.2, I am passionate about pushing the boundaries of technology.
+                  I am a fourth-year Computer Science and Engineering undergraduate at the Indian Institute of Information Technology, Sri City, with a strong foundation in Data Structures & Algorithms, Object-Oriented Programming, and software development. I enjoy solving challenging problems and building practical solutions that combine strong engineering fundamentals with modern technologies.
                 </p>
+                
                 <p>
-                  My technical expertise spans multiple programming languages including Python, Java, and C, complemented by solid knowledge in data structures, algorithms, and software development fundamentals. I thrive on solving complex problems and creating innovative solutions.
+                  My technical experience spans full-stack software development and AI-based computer vision. I have worked with Java, Python, JavaScript, React, Node.js, and MongoDB to develop web applications, while also exploring computer vision and 3D scene understanding through AI-based projects. These experiences have strengthened my ability to design, develop, and improve real-world software solutions.
                 </p>
+                
                 <p>
-                  My primary focus is on software development engineering roles, where I can leverage my technical skills and creative thinking to build applications that make a meaningful impact. I am constantly learning and staying updated with the latest industry trends and emerging technologies.
+                  I am particularly interested in Software Development Engineer and Specialist Programmer roles, where I can apply my problem-solving skills, programming knowledge, and development experience to build scalable and impactful applications. I am continuously learning new technologies and strengthening my technical skills to grow as a software engineer.
                 </p>
               </div>
             </div>

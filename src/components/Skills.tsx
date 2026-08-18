@@ -49,9 +49,9 @@ const Skills: React.FC = () => {
       icon: <Code className="w-6 h-6" />,
       skills: [
         { name: 'Python', level: 85 },
-        { name: 'Java', level: 80 },
+        { name: 'Java', level: 85 },
         { name: 'C', level: 75 },
-        { name: 'TypeScript', level: 50 },
+        { name: 'JavaScript', level: 80 },
       ],
       color: 'from-blue-500 to-cyan-500'
     },
@@ -62,8 +62,10 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'HTML/CSS', level: 85 },
         { name: 'JavaScript', level: 80 },
-        { name: 'Node.js', level: 70 },
-        { name: 'React', level: 50 },
+        { name: 'Node.js', level: 75 },
+        { name: 'React', level: 85 },
+        { name: 'Express.js', level: 70 },
+        { name: 'REST APIs', level: 75 },
       ],
       color: 'from-green-500 to-emerald-500'
     },
@@ -106,7 +108,7 @@ const Skills: React.FC = () => {
       title: 'Operating Systems',
       icon: <Cpu className="w-6 h-6" />,
       skills: [
-        { name: 'OS Fundamentals', level: 75 },
+        { name: 'OS Fundamentals', level: 70 },
         { name: 'Linux', level: 70 },
         { name: 'Windows', level: 85 },
       ],

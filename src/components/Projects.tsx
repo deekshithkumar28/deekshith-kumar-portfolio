@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Folder, Plus, Code, Star, ArrowRight } from 'lucide-react';
+import {
+  Brain,
+  Box,
+  Utensils,
+  Code,
+  Database,
+  Cpu,
+  Server,
+} from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,98 +30,203 @@ const Projects: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const projects = [
+    {
+      id: 1,
+      category: 'AI / COMPUTER VISION',
+      title: 'AI-Driven Archaeological Site Mapping',
+      icon: <Brain className="w-7 h-7" />,
+      description:
+        'An AI-based archaeological object detection system using YOLO models, FastAPI REST APIs, and a React dashboard for image upload and prediction visualization.',
+      technologies: [
+        { name: 'Python', icon: <Code className="w-3.5 h-3.5" /> },
+        { name: 'YOLOv8', icon: <Brain className="w-3.5 h-3.5" /> },
+        { name: 'YOLOv11', icon: <Brain className="w-3.5 h-3.5" /> },
+        { name: 'FastAPI', icon: <Server className="w-3.5 h-3.5" /> },
+        { name: 'React', icon: <Code className="w-3.5 h-3.5" /> },
+      ],
+      highlights: [
+        'Achieved mAP@50 scores of 0.71 with YOLOv8 and 0.58 with YOLOv11',
+        'Developed FastAPI REST APIs for image upload and model prediction',
+        'Built a React dashboard for prediction visualization and evaluation',
+      ],
+      color: 'from-blue-500 to-cyan-500',
+      glow: 'from-blue-500/20 to-cyan-500/20',
+    },
+    {
+      id: 2,
+      category: '3D COMPUTER VISION',
+      title:
+        'Evaluation of Pretrained 3D Object Detection on SAM3D-Reconstructed Scenes',
+      icon: <Box className="w-7 h-7" />,
+      description:
+        'A 3D computer vision project evaluating pretrained object detection models on SAM3D-reconstructed point cloud scenes using manual annotation and automated dataset preparation.',
+      technologies: [
+        { name: 'Python', icon: <Code className="w-3.5 h-3.5" /> },
+        { name: 'PyTorch', icon: <Cpu className="w-3.5 h-3.5" /> },
+        { name: 'Linux', icon: <Code className="w-3.5 h-3.5" /> },
+        { name: 'CUDA', icon: <Cpu className="w-3.5 h-3.5" /> },
+        { name: 'CloudCompare', icon: <Box className="w-3.5 h-3.5" /> },
+      ],
+      highlights: [
+        'Generated manual annotations for SAM3D-reconstructed 3D point cloud scenes',
+        'Developed Python scripts for bounding-box generation and annotation preprocessing',
+        'Evaluated pretrained 3D object detection models using PyTorch in CUDA-enabled environments',
+      ],
+      color: 'from-purple-500 to-pink-500',
+      glow: 'from-purple-500/20 to-pink-500/20',
+    },
+    {
+      id: 3,
+      category: 'FULL-STACK DEVELOPMENT',
+      title: 'RestoConnect',
+      icon: <Utensils className="w-7 h-7" />,
+      description:
+        'A full-stack restaurant management platform supporting Admin, Staff, Reservation, Menu, and Customer workflows with secure RESTful APIs and MongoDB.',
+      technologies: [
+        { name: 'React.js', icon: <Code className="w-3.5 h-3.5" /> },
+        { name: 'Node.js', icon: <Server className="w-3.5 h-3.5" /> },
+        { name: 'Express.js', icon: <Server className="w-3.5 h-3.5" /> },
+        { name: 'MongoDB', icon: <Database className="w-3.5 h-3.5" /> },
+      ],
+      highlights: [
+        'Developed Admin, Staff, Reservation, Menu, and Customer workflows',
+        'Implemented JWT authentication and role-based authorization',
+        'Designed RESTful APIs with middleware validation and optimized MongoDB schemas',
+      ],
+      color: 'from-orange-500 to-red-500',
+      glow: 'from-orange-500/20 to-red-500/20',
+    },
+  ];
+
   return (
-    <section id="projects" ref={sectionRef} className="py-20 bg-white dark:bg-gray-900">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-20 bg-white dark:bg-gray-900"
+    >
       <div className="container mx-auto px-6">
-        <div className={`transform transition-all duration-1000 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
+        <div
+          className={`transform transition-all duration-1000 ${
+            isVisible
+              ? 'translate-y-0 opacity-100'
+              : 'translate-y-10 opacity-0'
+          }`}
+        >
+          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Projects
             </h2>
+
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Showcasing my development journey and upcoming innovations
+              A collection of projects showcasing my experience in software
+              development, artificial intelligence, and computer vision.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Glassmorphism Project Placeholder */}
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              
-              <div className="relative bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 transform group-hover:scale-[1.02]">
-                {/* Animated Background Elements */}
-                <div className="absolute top-4 left-4 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                <div className="absolute top-4 right-4 w-2 h-2 bg-purple-500 rounded-full animate-ping"></div>
-                <div className="absolute bottom-4 left-8 w-2 h-2 bg-pink-500 rounded-full animate-bounce"></div>
-                <div className="absolute bottom-4 right-8 w-3 h-3 bg-cyan-500 rounded-full animate-pulse delay-300"></div>
+          {/* Project Cards */}
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="relative group h-full"
+              >
+                {/* Gradient Glow */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${project.glow} rounded-3xl blur-xl opacity-60 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500`}
+                ></div>
 
-                {/* Main Content */}
-                <div className="relative z-10">
-                  <div className="mb-8">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
-                      <Folder className="w-12 h-12 text-white" />
+                {/* Card */}
+                <div className="relative h-full flex flex-col bg-white/10 dark:bg-gray-800/20 backdrop-blur-lg border border-white/20 dark:border-gray-700/30 rounded-3xl p-7 shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 overflow-hidden">
+                  
+                  {/* Decorative Elements */}
+                  <div
+                    className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-r ${project.glow} rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition-all duration-500`}
+                  ></div>
+
+                  <div className="absolute top-5 right-5 w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
+
+                  {/* Category */}
+                  <div className="relative z-10 flex items-center gap-3 mb-5">
+                    <div
+                      className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${project.color} flex items-center justify-center text-white shadow-lg group-hover:rotate-6 transition-transform duration-500`}
+                    >
+                      {project.icon}
                     </div>
+
+                    <span
+                      className={`text-xs font-bold tracking-wider bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
+                    >
+                      {project.category}
+                    </span>
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
-                    Projects Coming Soon
+                  {/* Project Title */}
+                  <h3 className="relative z-10 text-2xl font-bold text-gray-800 dark:text-white mb-4 leading-tight">
+                    {project.title}
                   </h3>
 
-                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                    I'm currently working on exciting projects that will showcase my skills in software development, 
-                    web applications, and algorithm implementation. Stay tuned for updates!
+                  {/* Description */}
+                  <p className="relative z-10 text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    {project.description}
                   </p>
 
-                  {/* Feature Cards */}
-                  <div className="grid md:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 dark:border-gray-700/10 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300">
-                      <Code className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                      <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Web Applications</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Full-stack web development projects using modern technologies</p>
-                    </div>
+                  {/* Divider */}
+                  <div className="relative z-10 h-px bg-gray-200/50 dark:bg-gray-700/50 mb-6"></div>
 
-                    <div className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 dark:border-gray-700/10 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300">
-                      <Star className="w-8 h-8 text-purple-500 mx-auto mb-3" />
-                      <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Algorithm Solutions</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Complex problem-solving with optimized algorithms and data structures</p>
-                    </div>
+                  {/* Technologies */}
+                  <div className="relative z-10 mb-7">
+                    <h4 className="text-xs font-bold tracking-wider text-gray-500 dark:text-gray-400 uppercase mb-3">
+                      Tech Stack
+                    </h4>
 
-                    <div className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl p-6 border border-white/10 dark:border-gray-700/10 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300">
-                      <Plus className="w-8 h-8 text-pink-500 mx-auto mb-3" />
-                      <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Innovative Ideas</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Creative solutions to real-world problems using cutting-edge technology</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech.name}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100/70 dark:bg-gray-700/50 border border-gray-200/50 dark:border-gray-600/50 text-xs font-medium text-gray-700 dark:text-gray-200"
+                        >
+                          {tech.icon}
+                          {tech.name}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Call to Action */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center"
-                    >
-                      Collaborate With Me
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </button>
-                    
-                    <button
-                      onClick={() => window.open('https://github.com/deekshithkumar28', '_blank')}
-                      className="px-8 py-3 border-2 border-blue-600/50 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-600/10 dark:hover:bg-blue-600/10 transition-all duration-200"
-                    >
-                      View GitHub
-                    </button>
+                  {/* Highlights */}
+                  <div className="relative z-10 mt-auto">
+                    <h4 className="text-xs font-bold tracking-wider text-gray-500 dark:text-gray-400 uppercase mb-3">
+                      Highlights
+                    </h4>
+
+                    <div className="space-y-3">
+                      {project.highlights.map((highlight, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-3"
+                        >
+                          <div
+                            className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.color} flex-shrink-0`}
+                          ></div>
+
+                          <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {highlight}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Future Projects Teaser */}
-            <div className="mt-12 text-center">
-              <p className="text-gray-500 dark:text-gray-400 italic">
-                "The best way to predict the future is to create it." - Building tomorrow's solutions today.
-              </p>
-            </div>
+          {/* Bottom Quote */}
+          <div className="mt-14 text-center">
+            <p className="text-gray-500 dark:text-gray-400 italic">
+              "The best way to predict the future is to create it."
+            </p>
           </div>
         </div>
       </div>

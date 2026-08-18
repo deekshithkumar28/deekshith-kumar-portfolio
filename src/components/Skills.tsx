@@ -42,79 +42,77 @@ const Skills: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skillCategories = [
-    {
-      id: 'programming',
-      title: 'Programming Languages',
-      icon: <Code className="w-6 h-6" />,
-      skills: [
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 85 },
-        { name: 'C', level: 75 },
-        { name: 'JavaScript', level: 80 },
-      ],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      id: 'web',
-      title: 'Web Development',
-      icon: <Globe className="w-6 h-6" />,
-      skills: [
-        { name: 'HTML/CSS', level: 85 },
-        { name: 'JavaScript', level: 80 },
-        { name: 'Node.js', level: 75 },
-        { name: 'React', level: 85 },
-        { name: 'Express.js', level: 70 },
-        { name: 'REST APIs', level: 75 },
-      ],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      id: 'dsa',
-      title: 'Data Structures & Algorithms',
-      icon: <Zap className="w-6 h-6" />,
-      skills: [
-        { name: 'Arrays & Linked Lists', level: 90 },
-        { name: 'Stacks & Queues', level: 85 },
-        { name: 'Trees & Graphs', level: 80 },
-        { name: 'Sorting & Searching', level: 85 },
-      ],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      id: 'database',
-      title: 'Databases',
-      icon: <Database className="w-6 h-6" />,
-      skills: [
-        { name: 'MongoDB', level: 75 },
-        { name: 'SQL', level: 80 },
-        { name: 'DBMS Concepts', level: 85 },
-      ],
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      id: 'tools',
-      title: 'Development Tools',
-      icon: <Terminal className="w-6 h-6" />,
-      skills: [
-        { name: 'VS Code', level: 90 },
-        { name: 'Command Line', level: 80 },
-        { name: 'Git', level: 75 },
-      ],
-      color: 'from-indigo-500 to-purple-500'
-    },
-    {
-      id: 'os',
-      title: 'Operating Systems',
-      icon: <Cpu className="w-6 h-6" />,
-      skills: [
-        { name: 'OS Fundamentals', level: 70 },
-        { name: 'Linux', level: 70 },
-        { name: 'Windows', level: 85 },
-      ],
-      color: 'from-teal-500 to-cyan-500'
-    },
-  ];
+const skillCategories = [
+  {
+    id: 'programming',
+    title: 'Programming Languages',
+    icon: <Code className="w-6 h-6" />,
+    skills: [
+      { name: 'Java', level: 85 },
+      { name: 'Python', level: 85 },
+      { name: 'JavaScript', level: 80 },
+      { name: 'C', level: 75 },
+    ],
+    color: 'from-blue-500 to-cyan-500'
+  },
+  {
+    id: 'web',
+    title: 'Web Development',
+    icon: <Globe className="w-6 h-6" />,
+    skills: [
+      { name: 'HTML/CSS', level: 75 },
+      { name: 'React', level: 85 },
+      { name: 'Node.js', level: 80 },
+      { name: 'Express.js', level: 80 },
+    ],
+    color: 'from-green-500 to-emerald-500'
+  },
+  {
+    id: 'dsa',
+    title: 'Data Structures & Algorithms',
+    icon: <Zap className="w-6 h-6" />,
+    skills: [
+      { name: 'Arrays & Linked Lists', level: 90 },
+      { name: 'Stacks & Queues', level: 85 },
+      { name: 'Trees & Graphs', level: 80 },
+      { name: 'Sorting & Searching', level: 85 },
+    ],
+    color: 'from-purple-500 to-pink-500'
+  },
+  {
+    id: 'database',
+    title: 'Databases',
+    icon: <Database className="w-6 h-6" />,
+    skills: [
+      { name: 'MongoDB', level: 80 },
+      { name: 'SQL', level: 80 },
+      { name: 'DBMS', level: 80 },
+    ],
+    color: 'from-orange-500 to-red-500'
+  },
+  {
+    id: 'os',
+    title: 'Core Computer Science',
+    icon: <Cpu className="w-6 h-6" />,
+    skills: [
+      { name: 'Object-Oriented Programming', level: 80 },
+      { name: 'Operating Systems', level: 75 },
+      { name: 'Computer Networks', level: 75 },
+    ],
+    color: 'from-teal-500 to-cyan-500'
+  },
+  {
+    id: 'tools',
+    title: 'Development Tools',
+    icon: <Terminal className="w-6 h-6" />,
+    skills: [
+      { name: 'Git', level: 85 },
+      { name: 'Postman', level: 80 },
+      { name: 'VS Code', level: 90 },
+    ],
+    color: 'from-indigo-500 to-purple-500'
+  },
+];
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 bg-white dark:bg-gray-900">
